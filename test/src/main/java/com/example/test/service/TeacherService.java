@@ -25,4 +25,23 @@ public class TeacherService {
         teacher.setName(teacherDTO.getName());
         teacherRepository.save(teacher);
     }
+
+
+
+    public Teacher getTeacher(String id) {
+        return teacherRepository.findOne(id);
+    }
+
+    public void deleteTeacher(String id) {
+        teacherRepository.delete(id);
+    }
+
+    public Teacher updateTeacher(String id, TeacherController.TeacherRequestDTO teacherRequestDTO) {
+        Teacher teacher = new Teacher();
+        teacher.setId(id);
+
+        teacher.setName(teacherRequestDTO.getName());
+        teacherRepository.save(teacher);
+        return teacher;
+    }
 }
