@@ -39,7 +39,7 @@ public class SellerController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-    public Seller updateSeller(@PathVariable String id, SellerRequestDTO sellerRequestDTO){
+    public Seller updateSeller(@PathVariable String id, @RequestBody SellerRequestDTO sellerRequestDTO){
         return sellerService.updateSeller(id, sellerRequestDTO);
     }
 

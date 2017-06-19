@@ -44,7 +44,7 @@ public class RegistryCarSoldController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-    public RegistryCarSold updateRegistry(@PathVariable String id, CarSoldRequestDTO carSoldRequestDTO){
+    public RegistryCarSold updateRegistry(@PathVariable String id, @RequestBody CarSoldRequestDTO carSoldRequestDTO){
         return registryCarSoldService.updateRegistry(id, carSoldRequestDTO);
     }
 

@@ -37,7 +37,7 @@ public class CarController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-    public Car updateCar(@PathVariable String id, CarRequestDTO carRequestDTO){
+    public Car updateCar(@PathVariable String id,@RequestBody CarRequestDTO carRequestDTO){
         return carService.updateCar(id, carRequestDTO);
     }
 
